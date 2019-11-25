@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  vertica:
+    image: 'aadithya233/vertica:latest'
+    container_name: 'carestack_vertica'
+    volumes:
+      - type: 'bind'
+        target: '/home/dbadmin/docker'
+        source: './vertica_volume'
+    ports: 
+      - '127.0.0.1:5433:5433/tcp'
